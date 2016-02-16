@@ -1,0 +1,7 @@
+Achieve.wav|K9Afrm.wav|Verygood.wav|K9Mastr.wav|K9Mastr.wav|K9fx.wav|K9Theme.wav
+K9Mastr.wav|K9Afrm.wav|Verygood.wav|Theme4.wav|K9Mastr.wav|K9fx.wav|K9Theme.wav
+Mistress.wav|Youcalld.wav|maximum_defence.wav|theme10.wav|goodbye.wav|power_supply.wav|sounds/SJAtheme.wav
+sounds/R2Sad.wav|sounds/R2Playful.wav|sounds/R2Info.wav|sounds/SWOpenTheme.wav|sounds/R2Shocked.wav|sounds/R2Laugh.wav|sounds/ImpMarch.wav
+sounds/smeghead.wav|sounds/RDHowdy.wav|sounds/RDLikeToast3.wav|sounds/RDTalkieintro.wav|sounds/RDLikeMuffin.wav|sounds/RDWaffleMan.wav|sounds/RDtheme.wav
+K9Mastr.wav|ageofsteel.wav|exterminate.wav
+ext1.wav|areyoumymuumy.wav|power_supply.wav
