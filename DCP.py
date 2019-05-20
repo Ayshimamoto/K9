@@ -3,10 +3,10 @@
 
 
 import time
-import os
+import os, errno
 import subprocess, signal
-
-
+PIDFile = '/var/tmp/K9.PID'
+StartK9 = '/usr/bin/python /home/pi/K9/k9.py &'
 
 WDT = 30
 def gettime():
@@ -17,13 +17,21 @@ def gettime():
 
 def PIDservice():
      #this function reads the minutes and seconds out of the file /var/tmp/K9.PID.
-     file=open('/var/tmp/K9.PID','r')
-     value = file.readline() #as a string
-     file.close()
+     try:
+	file=open(PIDFile,'r')
+     	value = file.readline() #as a string
+     	file.close()
+     except:
+        print "whoops"
+	value = "0000A"
      return(value)
 
 value = (gettime())
+print "time"
+print value
 filetime = str(PIDservice())
+print "file"
+print filetime
 currenttime = int(value)
 currentminute = int(value[1]) + int(value[0])*10
 currentseconds = int(value[3]) + int(value[2])*10
@@ -38,7 +46,7 @@ if Status == 'A': # 'A' represents if DCP started K9.py
         WDT = int(60)
 if Status == 'B': # 'B' represents if it is searching for the Wiimote
         WDT = int(60)
-if Status == 'C': # 'C' represents if everything is in steardy state
+if Status == 'C': # 'C' represents if everything is in steady state
         WDT = int(30)
 if Status == 'D': # 'D' represents entering park and bark mode with extended loading times
 	WDT = int(120)
@@ -63,8 +71,4 @@ if ((difference > WDT) and (difference < 3600 )) or ((difference > TDW) and (dif
                 os.kill(pid, signal.SIGKILL)
     time.sleep(0.2);
     # start a new process
-    os.system('python k9.py &')
-
-
-
-
+    os.system(StartK9)
